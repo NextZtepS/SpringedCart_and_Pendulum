@@ -19,8 +19,7 @@ def model(Y, τ):
     # Equations of motion
     dx_dτ = dx_dτ
     # d2x_dτ2 = (1 / (M + m) * L) * (- m * l * np.cos(θ) * d2θ_dτ2 + m * l * np.sin(θ) * dθ_dτ**2 - k * L * T**2 * x)
-    d2x_dτ2 = (1 / (L * ((M + m) - m * np.cos(θ)**2))) * (m * g * T**2 *
-                                                          np.cos(θ) * np.sin(θ) + m * l * np.sin(θ) * dθ_dτ**2 - k * L * T**2 * x)
+    d2x_dτ2 = (1 / (L * ((M + m) - m * np.cos(θ)**2))) * (m * g * T**2 * np.cos(θ) * np.sin(θ) + m * l * np.sin(θ) * dθ_dτ**2 - k * L * T**2 * x)
     dθ_dτ = dθ_dτ
     d2θ_dτ2 = (1 / l) * (- L * np.cos(θ) * d2x_dτ2 - g * T**2 * np.sin(θ))
 
