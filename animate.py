@@ -1,4 +1,4 @@
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import odeint
@@ -44,8 +44,8 @@ dθ_dτ0 = 2
 Y0 = [x0, dx_dτ0, θ0, dθ_dτ0]
 
 # Solve the Differential Equations
-τ_max = 100
-num_point = 10_000
+τ_max = 30
+num_point = 1_000
 τ = np.linspace(0, τ_max, num_point)
 x, dx_dτ, θ, dθ_dτ = solve_and_extract(model, Y0, τ)
 
@@ -82,7 +82,10 @@ if __name__ == "__main__":
 
     # Animate
     ani = FuncAnimation(fig, update, frames=len(
-        τ), init_func=init, blit=True, interval=((τ_max * T * 1000) / num_point))
+        τ), init_func=init, blit=True, interval=(τ_max * T * 1000) / num_point)
 
     plt.legend()
+    # The following line may take a long time to render the animation
+    # ani.save("animation.gif", writer=PillowWriter(fps=num_point / (τ_max * T)))
     plt.show()
+    
