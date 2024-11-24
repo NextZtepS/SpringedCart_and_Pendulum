@@ -4,9 +4,9 @@ import numpy as np
 from scipy.integrate import odeint
 
 # Constants
-M = 1.0  # Mass of the cart
+M = 0.5  # Mass of the cart
 m = 0.5  # Mass of the pendulum
-g = 9.81  # Gravity
+g = 1  # Gravity
 k = 1  # Spring constant
 l = 1  # Length of the pendulum
 L = 1  # Unit length
@@ -38,14 +38,15 @@ def solve_and_extract(model, Y0, τ):
 
 # Initial conditions
 x0 = 0.2
-dx_dτ0 = 0
+dx_dτ0 = 1
 θ0 = np.pi / 2
-dθ_dτ0 = 0
+dθ_dτ0 = 2
 Y0 = [x0, dx_dτ0, θ0, dθ_dτ0]
 
 # Solve the Differential Equations
-τ_max = 30
-τ = np.linspace(0, τ_max, 1_000)
+τ_max = 100
+num_point = 10_000
+τ = np.linspace(0, τ_max, num_point)
 x, dx_dτ, θ, dθ_dτ = solve_and_extract(model, Y0, τ)
 
 
@@ -81,7 +82,7 @@ if __name__ == "__main__":
 
     # Animate
     ani = FuncAnimation(fig, update, frames=len(
-        τ), init_func=init, blit=True, interval=τ_max*T)
+        τ), init_func=init, blit=True, interval=((τ_max * T * 1000) / num_point))
 
     plt.legend()
     plt.show()
