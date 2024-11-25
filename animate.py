@@ -31,7 +31,7 @@ def solve_and_extract(model, Y0, τ):
     x = Y[:, 0]
     dx_dτ = Y[:, 1]
     θ = Y[:, 2]
-    θ = np.mod(θ-np.pi, 2*np.pi) - np.pi  # make θ between -π and π only
+    θ = np.mod(θ - np.pi, 2 * np.pi) - np.pi  # make θ between -π and π only
     dθ_dτ = Y[:, 3]
     return x, dx_dτ, θ, dθ_dτ
 
