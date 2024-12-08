@@ -38,7 +38,7 @@ T = 1  # Unit time
 # Initial conditions
 x0 = 0.5
 dx_dτ0 = 2
-θ0 = np.pi / 2
+θ0 = np.pi * 0.8
 dθ_dτ0 = -2
 Y0 = [x0, dx_dτ0, θ0, dθ_dτ0]
 
