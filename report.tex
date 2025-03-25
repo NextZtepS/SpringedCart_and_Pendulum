@@ -28,7 +28,7 @@ In our project, we studied the cart on a spring system. The system consists of a
 \section{Theoretical Analysis}
 \subsection{The Lagrangian}
 
-Referring back to the \autoref{fig:diagram}, we first describe the position of the cart using $\Vec{r_M}$ and that of the pendulum using $\Vec{r_m}$ in the Cartesian basis for convenient Lagrangian calculation. We will later describe the system in terms of the non-dimensionalized length $x$, angle $\theta$, and time $t$. Note that the position of the pendulum depends on the that of the cart which we organize into the two equations below.
+Referring back to \autoref{fig:diagram}, we first describe the position of the cart using $\Vec{r_M}$ and that of the pendulum using $\Vec{r_m}$ in the Cartesian basis for convenient Lagrangian calculation. We will later describe the system in terms of the non-dimensionalized length $x$, angle $\theta$, and time $t$. Note that the position of the pendulum depends on the that of the cart, which we organize into the two equations below.
 \begin{align}
 	\Vec{r_M} &= x \hat{x} \label{eq:r_M} \\
     \Vec{r_m} &= (x + l\sin{\theta}) \hat{x} + (-l\cos{\theta}) \hat{y} \label{eq:r_m}
@@ -65,7 +65,7 @@ And we continue the same derivation for the $\theta$ coordinate to get
     ml^2\Ddot{\theta}^2 + ml\cos{\theta} &= -mgl\sin{\theta} \label{eq:theta}.
 \end{align}
 
-Normally, we can numerically solve the two differential equations above with various initial conditions already. However, we choose to non-dimensionalize the equations allowing for a more convenient analysis with different physical parameters by defining a non-dimensionalized time and length as follows.
+Normally, we can numerically solve the two differential equations above with various initial conditions already. However, we choose to non-dimensionalize the equations, allowing for a more convenient analysis with different physical parameters by defining a non-dimensionalized time and length as follows.
 
 \begin{align}
     \tau &= \frac{t}{T} \label{eq:tau} \\
@@ -83,7 +83,7 @@ In the next section, we numerically solve the two non-dimensionalized differenti
 
 \section{Numerical Analysis}
 
-We numerically solved the system by varying the parameters involved. The three main system parameters that we are interested in include: 1) the ratio between mass of cart and mass of the pendulum $r_{mass}$ 2) the natural frequency of the mass-spring system $f_{msp}$ 3) the natural angular of the pendulum $f_{pen}$. We define the three parameters as follows.
+We numerically solved the system by varying the parameters involved. The three main system parameters that we are interested in include: 1) the ratio between mass of the cart and mass of the pendulum $r_{mass}$ 2) the natural frequency of the mass-spring system $f_{msp}$ 3) the natural angular of the pendulum $f_{pen}$. We define the three parameters as follows.
 
 \begin{align}
     r_{mass} &= \frac{M}{m} \\
@@ -95,9 +95,9 @@ As for other parameters, we keep the length of pendulum $l = 1$ m, unit time $T 
 
 \subsection{Pendulum-mode Motion}
 
-We first investigated the case where the natural frequency of the pendulum is much greater then the natural frequency of the mass spring system, shown in \autoref{fig:pendulum-mode}. In this case, the pendulum mode and its motion dominates the system. This results in simple pendulum motion, and chaotic motion for the mass spring system. In the state space plots, we can see that the pendulum's motion repeats every cycle, whereas the cart's motion is complex.
+We first investigated the case where the natural frequency of the pendulum is much greater than the natural frequency of the mass spring system, shown in \autoref{fig:pendulum-mode}. In this case, the pendulum mode and its motion dominates the system. This results in simple pendulum motion, and chaotic motion for the mass spring system. In the state space plots, we can see that the pendulum's motion repeats every cycle, whereas the cart's motion is complex.
 
-Since the natural frequency of the pendulum is much greater than the natural frequency of the mass spring system, the pendulum will have more energy then the cart. This means that the motion of the pendulum can overpower the motion of the cart. Since our gravity is extremely high in this example, we see that the pendulum never flips over, which would appear as a horizontal line across the plot. Also, as the mass ratio decreases, we see that the transition between potential energy to kinetic energy of the pendulum becomes more pronounced as its being pulled more strongly by the gravitational force. We also noticed that the cart's motion seems to be periodic over a long timescale.
+Since the natural frequency of the pendulum is much greater than the natural frequency of the mass spring system, the pendulum will have more energy than the cart. This means that the motion of the pendulum can overpower the motion of the cart. Since our gravity is extremely high in this example, we see that the pendulum never flips over, which would appear as a horizontal line across the plot. Also, as the mass ratio decreases, we see that the transition between potential energy to kinetic energy of the pendulum becomes more pronounced as it's being pulled more strongly by the gravitational force. We also noticed that the cart's motion seems to be periodic over a long timescale.
 
 \begin{figure}
     \centering
@@ -110,9 +110,9 @@ Since the natural frequency of the pendulum is much greater than the natural fre
 
 \subsection{Cart-mode Motion}
 
-Secondly, we investigated the case where the natural frequency of the mass spring is much greater then the natural frequency of the pendulum, shown in \autoref{fig:cart-mode}. In this case, the mass spring system mode and its motion dominates the system. This results in a near simple harmonic motion on the mass spring system, and chaotic motion for the pendulum. In the state space plots, we can see that the cart's motion is bound within the circular envelope, which represents the case of pure simple harmonic motion, and being regularly disturbed by the the chaotic motion of the pendulum. 
+Secondly, we investigated the case where the natural frequency of the mass spring is much greater than the natural frequency of the pendulum, shown in \autoref{fig:cart-mode}. In this case, the mass spring system mode and its motion dominates the system. This results in a near simple harmonic motion on the mass spring system, and chaotic motion for the pendulum. In the state space plots, we can see that the cart's motion is bound within the circular envelope, which represents the case of pure simple harmonic motion, and being regularly disturbed by the chaotic motion of the pendulum. 
 
-Since the natural frequency of the mass spring system is much greater than the natural frequency of the pendulum, the mass spring system will have more energy than the pendulum. This means that the regular motion of the cart is constantly pushed around by the pendulum. As the mass ratio increases, the motion of the cart becomes more regular and resembles the simple harmonic case. This is because the influence of the pendulum's motion is minimized by its decreasing mass. Also, we observe that the pendulum is being driven by the energy stored in the spring causing it to flip over in a chaotic manner. One special case is when the system starts off at rest with the spring unstretched where the pendulum angle is the only source of energy; since the spring is very stiff, the cart's motion is minimized and the overall motion simplifies to a simple pendulum instead.
+Since the natural frequency of the mass spring system is much greater than the natural frequency of the pendulum, the mass spring system will have more energy than the pendulum. This means that the regular motion of the cart is constantly pushed around by the pendulum. As the mass ratio increases, the motion of the cart becomes more regular and resembles the simple harmonic case. This is because the influence of the pendulum's motion is minimized by its decreasing mass. Also, we observe that the pendulum is being driven by the energy stored in the spring, causing it to flip over in a chaotic manner. One special case is when the system starts off at rest with the spring unstretched where the pendulum angle is the only source of energy; since the spring is very stiff, the cart's motion is minimized and the overall motion simplifies to a simple pendulum instead.
 
 \begin{figure}
     \centering
@@ -125,7 +125,7 @@ Since the natural frequency of the mass spring system is much greater than the n
 
 \subsection{Mixed-mode Motion}
 
-Finally, we investigated the case where the natural frequency of the pendulum is equal to the natural frequency of the mass spring system, shown in \autoref{fig:mixed-mode}. In this case, the motion of both the mass spring system and pendulum is mostly chaotic. Since the energies of the systems are comparable, the motions are able to significantly affect each other. However, in the case where the mass of the cart is much greater then the mass of the pendulum, we can see that the cart starts to display a more stable simple harmonic motion. This is likely due to the cart gaining energy relative to the pendulum due to its increased mass.
+Finally, we investigated the case where the natural frequency of the pendulum is equal to the natural frequency of the mass spring system, shown in \autoref{fig:mixed-mode}. In this case, the motion of both the mass spring system and pendulum is mostly chaotic. Since the energies of the systems are comparable, the motions are able to significantly affect each other. However, in the case where the mass of the cart is much greater than the mass of the pendulum, we can see that the cart starts to display a more stable simple harmonic motion. This is likely due to the cart gaining energy relative to the pendulum due to its increased mass.
 
 \begin{figure}
     \centering
@@ -141,6 +141,6 @@ We found that the natural angular frequencies could be used as an indicator for 
 
 To further understand the system, a different system parameters variation scheme should be meaningful. In our study, we chose to vary the natural angular frequency of the pendulum by changing $g$, resulting in a high potential barrier where the pendulum could not flip around itself. However, the length of the pendulum $l$ is another free parameter that could be studied in concurrent with other parameters like the spring constant $k$ and the two masses $M$ and $m$ to examine different scenarios that would grant a deeper understanding of the overall system.
 
-All of the code we used for the project can be found on GitHub \href{https://github.com/NextZtepS/SpringedCart_and_Pendulum/tree/main}{here}.
+All the code we used for the project can be found on GitHub \href{https://github.com/NextZtepS/SpringedCart_and_Pendulum/tree/main}{here}.
 
 \end{document}
